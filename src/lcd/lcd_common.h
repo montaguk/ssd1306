@@ -399,6 +399,16 @@ void ssd1306_resetController(int8_t rstPin, uint8_t delayMs);
 
 #ifdef __cplusplus
 }
+
+class INanoDisplay
+{
+public:
+     virtual void begin()
+     {
+     }
+};
+
+
 #endif
 
 #endif /* _LCD_COMMON_H_ */

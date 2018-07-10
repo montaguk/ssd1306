@@ -31,10 +31,6 @@
 
 #include "ssd1306_hal/io.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /**
  * @defgroup LCD_HW_INTERFACE_API I2C/SPI: physical interface functions
  * @{
@@ -47,6 +43,10 @@ extern "C" {
  *          driver initialization. But there are functions, which combine 2 steps in single call:
  *          ssd1306_128x64_i2c_initEx(), ssd1351_128x128_spi_init(), etc.
  */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /** Describes low level hardware API */
 typedef struct
@@ -146,6 +146,25 @@ void ssd1306_dataStart(void);
 
 #ifdef __cplusplus
 }
+
+class INanoInterface
+{
+public:
+     virtual void begin()
+     {
+     }
+     virtual void start() = 0;
+     virtual void stop() = 0;
+     virtual void send(uint8_t data) = 0;
+     virtual void send(const uint8_t *buffer, uint16_t len)
+     {
+          while (len--) { send(*buffer); buffer++; };
+     }
+     virtual void close()
+     {
+     }
+};
+
 #endif
 
 // ----------------------------------------------------------------------------
