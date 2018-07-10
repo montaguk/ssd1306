@@ -366,7 +366,9 @@ public:
      * @param y2 - position Y
      * @note color can be set via setColor()
      */
-    virtual void fillRect(lcdint_t x1, lcdint_t y1, lcdint_t x2, lcdint_t y2);
+    void fillRect(lcdint_t x1, lcdint_t y1, lcdint_t x2, lcdint_t y2) override;
+
+    using NanoCanvasOps::fillRect;
 
     /**
      * @brief Draws monochrome bitmap in color buffer using color, specified via setColor() method
@@ -439,7 +441,7 @@ public:
      * @param y - position Y
      * @note color can be set via setColor()
      */
-    virtual void putPixel(lcdint_t x, lcdint_t y);
+    void putPixel(lcdint_t x, lcdint_t y) override;
 
     /**
      * Draws horizontal or vertical line
@@ -448,7 +450,7 @@ public:
      * @param y2 - position Y
      * @note color can be set via setColor()
      */
-    virtual void drawVLine(lcdint_t x1, lcdint_t y1, lcdint_t y2);
+    void drawVLine(lcdint_t x1, lcdint_t y1, lcdint_t y2) override;
 
     /**
      * Draws horizontal or vertical line
@@ -457,7 +459,7 @@ public:
      * @param x2 - position X
      * @note color can be set via setColor()
      */
-    virtual void drawHLine(lcdint_t x1, lcdint_t y1, lcdint_t x2);
+    void drawHLine(lcdint_t x1, lcdint_t y1, lcdint_t x2) override;
 
     /**
      * Fills rectangle area
@@ -467,7 +469,9 @@ public:
      * @param y2 - position Y
      * @note color can be set via setColor()
      */
-    virtual void fillRect(lcdint_t x1, lcdint_t y1, lcdint_t x2, lcdint_t y2);
+    void fillRect(lcdint_t x1, lcdint_t y1, lcdint_t x2, lcdint_t y2) override;
+
+    using NanoCanvasOps::fillRect;
 
     /**
      * @brief Draws monochrome bitmap in color buffer using color, specified via setColor() method
@@ -483,7 +487,7 @@ public:
      *       In transparent mode, those pixels of source monochrome image, which are black, do not overwrite pixels
      *       in the screen buffer.
      */
-    virtual void drawBitmap1(lcdint_t x, lcdint_t y, lcduint_t w, lcduint_t h, const uint8_t *bitmap);
+    void drawBitmap1(lcdint_t x, lcdint_t y, lcduint_t w, lcduint_t h, const uint8_t *bitmap) override;
 
     /**
      * @brief Draws 8-bit color bitmap in color buffer.
@@ -494,12 +498,12 @@ public:
      * @param h - height in pixels
      * @param bitmap - 8-bit color bitmap data, located in flash
      */
-    virtual void drawBitmap8(lcdint_t x, lcdint_t y, lcduint_t w, lcduint_t h, const uint8_t *bitmap);
+    void drawBitmap8(lcdint_t x, lcdint_t y, lcduint_t w, lcduint_t h, const uint8_t *bitmap) override;
 
     /**
      * Clears canvas
      */
-    virtual void clear();
+    void clear() override;
 
     /**
      * Draws canvas on the LCD display
@@ -568,7 +572,9 @@ public:
      * @param y2 - position Y
      * @note color can be set via setColor()
      */
-    virtual void fillRect(lcdint_t x1, lcdint_t y1, lcdint_t x2, lcdint_t y2);
+    void fillRect(lcdint_t x1, lcdint_t y1, lcdint_t x2, lcdint_t y2) override;
+
+    using NanoCanvasOps::fillRect;
 
     /**
      * @brief Draws monochrome bitmap in color buffer using color, specified via setColor() method
@@ -584,7 +590,7 @@ public:
      *       In transparent mode, those pixels of source monochrome image, which are black, do not overwrite pixels
      *       in the screen buffer.
      */
-    virtual void drawBitmap1(lcdint_t x, lcdint_t y, lcduint_t w, lcduint_t h, const uint8_t *bitmap);
+    void drawBitmap1(lcdint_t x, lcdint_t y, lcduint_t w, lcduint_t h, const uint8_t *bitmap) override;
 
     /**
      * @brief Draws 8-bit color bitmap in color buffer.
@@ -595,12 +601,12 @@ public:
      * @param h - height in pixels
      * @param bitmap - 8-bit color bitmap data, located in flash
      */
-    virtual void drawBitmap8(lcdint_t x, lcdint_t y, lcduint_t w, lcduint_t h, const uint8_t *bitmap);
+    void drawBitmap8(lcdint_t x, lcdint_t y, lcduint_t w, lcduint_t h, const uint8_t *bitmap) override;
 
     /**
      * Clears canvas
      */
-    virtual void clear();
+    void clear() override;
 
     /**
      * Draws canvas on the LCD display
