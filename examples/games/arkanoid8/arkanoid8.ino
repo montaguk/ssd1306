@@ -33,6 +33,10 @@
 #include "arkanoid.h"
 #include "levels.h"
 
+#ifndef ARDUINO
+extern "C" void __cxa_pure_virtual() { while (1); }
+#endif
+
 #define PIX_BITS  2
 
 NanoEngine8 engine;

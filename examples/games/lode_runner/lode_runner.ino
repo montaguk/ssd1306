@@ -48,6 +48,10 @@
 #include "intf/ssd1306_interface.h"
 #include "intf/spi/ssd1306_spi.h"
 
+#ifndef ARDUINO
+extern "C" void __cxa_pure_virtual() { while (1); }
+#endif
+
 // Uncomment if you have ssd1331 oled display
 //#define SSD1331_ACCELERATION
 
