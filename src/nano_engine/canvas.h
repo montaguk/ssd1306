@@ -320,6 +320,10 @@ public:
 
     using NanoCanvasOps::NanoCanvasOps;
 
+    using NanoCanvasOps::putPixel;
+    using NanoCanvasOps::drawRect;
+    using NanoCanvasOps::fillRect;
+
     /**
      * Initializes canvas object.
      * Width can be of any value.
@@ -367,8 +371,6 @@ public:
      * @note color can be set via setColor()
      */
     void fillRect(lcdint_t x1, lcdint_t y1, lcdint_t x2, lcdint_t y2) override;
-
-    using NanoCanvasOps::fillRect;
 
     /**
      * @brief Draws monochrome bitmap in color buffer using color, specified via setColor() method
@@ -422,6 +424,10 @@ public:
     static const uint8_t BITS_PER_PIXEL = 8;
 
     using NanoCanvasOps::NanoCanvasOps;
+
+    using NanoCanvasOps::putPixel;
+    using NanoCanvasOps::drawRect;
+    using NanoCanvasOps::fillRect;
 
     /**
      * Initializes canvas object.
@@ -525,6 +531,10 @@ public:
     static const uint8_t BITS_PER_PIXEL = 16;
 
     using NanoCanvasOps::NanoCanvasOps;
+
+    using NanoCanvasOps::putPixel;
+    using NanoCanvasOps::drawRect;
+    using NanoCanvasOps::fillRect;
 
     /**
      * Initializes canvas object.
