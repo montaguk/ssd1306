@@ -29,6 +29,7 @@
 #define _LCD_COMMON_H_
 
 #include "ssd1306_hal/io.h"
+#include "intf/ssd1306_interface.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -403,11 +404,26 @@ void ssd1306_resetController(int8_t rstPin, uint8_t delayMs);
 class INanoDisplay
 {
 public:
+     INanoDisplay(INanoInterface& intf): m_intf(intf) {};
+
+
      virtual void begin()
      {
+         reset();
      }
-};
 
+     virtual void reset()
+     {
+     }
+
+     virtual void setBlock() = 0;
+
+     virtual void nextPage() = 0;
+
+protected:
+     INanoInterface& m_intf;
+
+};
 
 #endif
 
