@@ -171,24 +171,24 @@ private:
 class NanoEngineCore: public NanoEngineInputs
 {
 protected:
-    NanoEngineCore(): NanoEngineInputs() {};
+    NanoEngineCore();
 
 public:
     /**
      * Initializes internal timestamps.
      */
-    static void begin();
+    void begin();
 
     /**
      * Sets working frame-rate for the engine
      * @param fps - frame rate to set between [1-255]
      */
-    static void setFrameRate(uint8_t fps);
- 
+    void setFrameRate(uint8_t fps);
+
     /**
      * Returns current frame rate
      */
-    static uint8_t getFrameRate() { return m_fps; };
+    uint8_t getFrameRate() { return m_fps; };
 
     /**
      * Returns cpu load in percents [0-255].
@@ -196,31 +196,31 @@ public:
      * 0 means, CPU has nothing to do.
      * >100 means that CPU is not enough to perform all operations
      */
-    static uint8_t getCpuLoad() { return m_cpuLoad; };
+    uint8_t getCpuLoad() { return m_cpuLoad; };
 
     /**
      * Returns true if it is time to render next frame
      */
-    static bool nextFrame();
+    bool nextFrame();
 
     /**
      * Sets user-defined loop callback. This callback will be called once every time
      * new frame needs to be refreshed on oled display.
      */
-    static void loopCallback(TLoopCallback callback) { m_loop = callback; };
+    void loopCallback(TLoopCallback callback) { m_loop = callback; };
 
 protected:
 
     /** Duration between frames in milliseconds */
-    static uint8_t   m_frameDurationMs;
+    uint8_t   m_frameDurationMs;
     /** Current fps */
-    static uint8_t   m_fps;
+    uint8_t   m_fps;
     /** Current cpu load in percents */
-    static uint8_t   m_cpuLoad;
+    uint8_t   m_cpuLoad = 0;
     /** Last timestamp in milliseconds the frame was updated on oled display */
-    static uint32_t  m_lastFrameTs;
+    uint32_t  m_lastFrameTs = 0;
     /** Callback to call before starting oled update */
-    static TLoopCallback m_loop;
+    TLoopCallback m_loop = nullptr;
 };
 
 /**
