@@ -117,7 +117,7 @@ void ssd1306_platform_i2cInit(int8_t busId, uint8_t addr, ssd1306_platform_i2cCo
         Wire.setClock(400000);
     #endif
 
-    if (sa) s_sa = addr;
+    if (addr) s_sa = addr;
     ssd1306_intf.spi = 0;
     ssd1306_intf.start = ssd1306_i2cStart_Wire;
     ssd1306_intf.stop = ssd1306_i2cStop_Wire;
